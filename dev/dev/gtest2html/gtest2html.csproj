@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\IConverter.cs" />
+    <Compile Include="Converter\Xml2TestSuiteConverter.cs" />
     <Compile Include="IndexHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
