@@ -10,6 +10,10 @@ namespace gtest2html.Template
 	{
 		public TestSuites TestSuites { get; set; }
 
+		/// <summary>
+		/// Constructor with argument.
+		/// </summary>
+		/// <param name="testSuites">Test suites.</param>
 		public TestSuitesHtmlTemplate(TestSuites testSuites)
 		{
 			TestSuites = testSuites;
