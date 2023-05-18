@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Converter\IConverter.cs" />
     <Compile Include="Converter\TestSuites2HtmlConverter.cs" />
-    <Compile Include="Converter\Xml2TestSuiteConverter.cs" />
+    <Compile Include="Converter\Xml2TestSuitesConverter.cs" />
     <Compile Include="IndexHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,7 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TemplateCommonBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Template\TestSuites2HtmlTemplate_part.cs" />
+    <Compile Include="Template\TestSuitesHtmlTemplate_part.cs" />
     <Compile Include="Template\TestSuitesHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

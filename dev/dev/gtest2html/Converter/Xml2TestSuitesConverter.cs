@@ -8,16 +8,16 @@ using System.Xml.Serialization;
 
 namespace gtest2html.Converter
 {
-	class Xml2TestSuiteConverter : IConverter<FileInfo, TestSuite>
+	class Xml2TestSuitesConverter : IConverter<FileInfo, TestSuites>
 	{
 		XmlSerializer _serializer;
 
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public Xml2TestSuiteConverter()
+		public Xml2TestSuitesConverter()
 		{
-			_serializer = new XmlSerializer(typeof(TestSuite));
+			_serializer = new XmlSerializer(typeof(TestSuites));
 		}
 
 		/// <summary>
@@ -25,12 +25,12 @@ namespace gtest2html.Converter
 		/// </summary>
 		/// <param name="src">Test suite XML file information.</param>
 		/// <returns>Converted TestSuite object.</returns>
-		public TestSuite Convert(FileInfo src)
+		public TestSuites Convert(FileInfo src)
 		{
 			using (var reader = new StreamReader(src.FullName, Encoding.GetEncoding("UTF-8")))
 			{
-				TestSuite suite = Deserialize(reader);
-				return suite;
+				TestSuites suites = Deserialize(reader);
+				return suites;
 			}
 		}
 
@@ -39,9 +39,9 @@ namespace gtest2html.Converter
 		/// </summary>
 		/// <param name="reader"></param>
 		/// <returns></returns>
-		protected TestSuite Deserialize(StreamReader reader)
+		protected TestSuites Deserialize(StreamReader reader)
 		{
-			TestSuite suite = (TestSuite)_serializer.Deserialize(reader);
+			TestSuites suite = (TestSuites)_serializer.Deserialize(reader);
 			return suite;
 		}
 	}
