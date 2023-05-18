@@ -59,6 +59,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TemplateCommonBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\TestSuites2HtmlTemplate_part.cs" />
+    <Compile Include="Template\TestSuitesHtmlTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestSuitesHtmlTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="TestMessageTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +91,12 @@
     <Content Include="Template\TemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>TemplateCommonBase.cs</LastGenOutput>
+      <CustomToolNamespace>gtest2html.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\TestSuitesHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestSuitesHtmlTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>gtest2html.Template</CustomToolNamespace>
     </Content>
     <Content Include="TestMessageTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
