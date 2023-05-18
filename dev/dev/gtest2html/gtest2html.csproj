@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\ATest2HtmlConveter.cs" />
     <Compile Include="Converter\IConverter.cs" />
     <Compile Include="Converter\TestSuites2HtmlConverter.cs" />
     <Compile Include="Converter\Xml2TestSuitesConverter.cs" />
