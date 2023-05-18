@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter\IConverter.cs" />
+    <Compile Include="Converter\TestSuites2HtmlConverter.cs" />
     <Compile Include="Converter\Xml2TestSuiteConverter.cs" />
     <Compile Include="IndexHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
