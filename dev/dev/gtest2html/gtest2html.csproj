@@ -46,6 +46,7 @@
     <Compile Include="Converter\ATest2HtmlConveter.cs" />
     <Compile Include="Converter\IConverter.cs" />
     <Compile Include="Converter\TestSuites2HtmlConverter.cs" />
+    <Compile Include="Converter\TestSuites2MessageHtmlConverter.cs" />
     <Compile Include="Converter\Xml2TestSuitesConverter.cs" />
     <Compile Include="IndexHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -60,6 +61,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TemplateCommonBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\TestMessageHtmlTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestMessageHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TestMessageHtmlTemplate_part.cs" />
     <Compile Include="Template\TestSuitesHtmlTemplate_part.cs" />
     <Compile Include="Template\TestSuitesHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -92,6 +99,11 @@
     <Content Include="Template\TemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>TemplateCommonBase.cs</LastGenOutput>
+      <CustomToolNamespace>gtest2html.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\TestMessageHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestMessageHtmlTemplate.cs</LastGenOutput>
       <CustomToolNamespace>gtest2html.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\TestSuitesHtmlTemplate.tt">
