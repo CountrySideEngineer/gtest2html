@@ -10,6 +10,9 @@ namespace gtest2html.Converter
 {
 	class Xml2TestSuitesConverter : IConverter<FileInfo, TestSuites>
 	{
+		/// <summary>
+		/// Serializer to convert XML to TestSuites object.
+		/// </summary>
 		XmlSerializer _serializer;
 
 		/// <summary>
