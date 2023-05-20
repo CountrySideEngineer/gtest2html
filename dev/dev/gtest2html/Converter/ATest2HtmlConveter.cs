@@ -14,7 +14,7 @@ namespace gtest2html.Converter
 		/// </summary>
 		/// <param name="src">Source to be conveted.</param>
 		/// <returns>Converted HTML content in string data type.</returns>
-		public string Convert(S src)
+		public virtual string Convert(S src)
 		{
 			TemplateCommonBase template = GetTemplate(src);
 			string content = template.TransformText();
