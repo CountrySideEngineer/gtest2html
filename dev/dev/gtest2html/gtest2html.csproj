@@ -46,6 +46,12 @@
     <Compile Include="Converter\ATest2HtmlConveter.cs" />
     <Compile Include="Converter\IConverter.cs" />
     <Compile Include="Converter\TestSuites2HtmlConverter.cs" />
+    <Compile Include="Converter\TestSuties2IndexHtmlConverter.cs" />
+    <Compile Include="Template\TestSuites2IndexHtmlTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestSuites2IndexHtmlTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Converter\TestSuites2MessageHtmlConverter.cs" />
     <Compile Include="Converter\Xml2TestSuitesConverter.cs" />
     <Compile Include="IndexHtmlTemplate.cs">
@@ -67,6 +73,7 @@
       <DependentUpon>TestMessageHtmlTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\TestMessageHtmlTemplate_part.cs" />
+    <Compile Include="Template\TestSuites2IndexHtmlTemplate_part.cs" />
     <Compile Include="Template\TestSuitesHtmlTemplate_part.cs" />
     <Compile Include="Template\TestSuitesHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -92,6 +99,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Template\TestSuites2IndexHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestSuites2IndexHtmlTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>gtest2html.Template</CustomToolNamespace>
+    </Content>
     <Content Include="IndexHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IndexHtmlTemplate.cs</LastGenOutput>
