@@ -43,7 +43,7 @@ namespace gtest2html.Template
 			<a href=""");
             
             #line 20 "E:\development\gtest2html\dev\dev\gtest2html\Template\TestMessageHtmlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(parentPage));
+            this.Write(this.ToStringHelper.ToStringWithCulture(ParentPage));
             
             #line default
             #line hidden
