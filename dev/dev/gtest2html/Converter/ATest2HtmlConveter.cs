@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace gtest2html.Converter
 {
-	abstract class ATest2HtmlConveter<S> : IConverter<S, string>
+	public abstract class ATest2HtmlConveter<S> : IConverter<S, string>
 	{
 		/// <summary>
 		/// A sequence to convert content as S data type into string.

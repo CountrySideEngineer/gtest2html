@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gtest2html.Converter
 {
-	interface IConverter<S, D>
+	public interface IConverter<S, D>
 	{
 		D Convert(S src);
 	}
