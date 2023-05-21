@@ -22,6 +22,10 @@ namespace gtest2html.Page
 		/// <param name="outputRoot">Output root directory information.</param>
 		public TestReportPageGenerator(DirectoryInfo outputRoot) : base(outputRoot) { }
 
+		/// <summary>
+		/// Genereate test report pages in HTML format as a file.
+		/// </summary>
+		/// <param name="fileInfos">Collection of test report file in XML format.</param>
 		public override void Generate(IEnumerable<FileInfo> fileInfos)
 		{
 			foreach (var fileInfo in fileInfos)
@@ -32,6 +36,10 @@ namespace gtest2html.Page
 			}
 		}
 
+		/// <summary>
+		/// Generate test report page in HTML format as a file.
+		/// </summary>
+		/// <param name="fileInfo">Test report file information in XML format.</param>
 		public virtual void Generate(FileInfo fileInfo)
 		{
 			TestSuites testSuites = base.ExtractTestSuites(fileInfo);
@@ -39,6 +47,11 @@ namespace gtest2html.Page
 			SendReport(fileInfo, content);
 		}
 
+		/// <summary>
+		/// Returns path to file to output file.
+		/// </summary>
+		/// <param name="fileInfo">File information as FileInfo object.</param>
+		/// <returns>FileInfo object about output file.</returns>
 		protected virtual FileInfo GetOutputFileInfo(FileInfo fileInfo)
 		{
 			string fileName = Path.GetFileNameWithoutExtension(fileInfo.FullName);
@@ -48,6 +61,11 @@ namespace gtest2html.Page
 			return outputFileInfo;
 		}
 
+		/// <summary>
+		/// Convert TestSuites object into string data in HTML format.
+		/// </summary>
+		/// <param name="suites">TestSuties object as </param>
+		/// <returns>HTML data as string data.</returns>
 		protected virtual string Suites2Content(TestSuites suites)
 		{
 			var template = new TestSuites2HtmlConverter();
@@ -55,6 +73,11 @@ namespace gtest2html.Page
 			return content;
 		}
 
+		/// <summary>
+		/// Send content into output file info, FileInfo.
+		/// </summary>
+		/// <param name="fileInfo">Output file information </param>
+		/// <param name="content">HTML content in string data type.</param>
 		protected void SendReport(FileInfo fileInfo, string content)
 		{
 			FileInfo destInfo = GetOutputFileInfo(fileInfo);
