@@ -10,6 +10,11 @@ namespace gtest2html.Converter
 	class TestSuties2IndexHtmlConverter : ATest2HtmlConveter<IEnumerable<TestSuites>>
 	{
 		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		public TestSuties2IndexHtmlConverter() : base() { }
+
+		/// <summary>
 		/// Create template for index.html
 		/// </summary>
 		/// <param name="src"></param>
