@@ -33,6 +33,8 @@ namespace gtest2html.Converter
 			using (var reader = new StreamReader(src.FullName, Encoding.GetEncoding("UTF-8")))
 			{
 				TestSuites suites = Deserialize(reader);
+				string testName = Path.GetFileNameWithoutExtension(src.FullName);
+				suites.TestName = testName;
 				return suites;
 			}
 		}
@@ -42,7 +44,7 @@ namespace gtest2html.Converter
 		/// </summary>
 		/// <param name="reader"></param>
 		/// <returns></returns>
-		protected TestSuites Deserialize(StreamReader reader)
+		protected virtual TestSuites Deserialize(StreamReader reader)
 		{
 			TestSuites suite = (TestSuites)_serializer.Deserialize(reader);
 			return suite;
