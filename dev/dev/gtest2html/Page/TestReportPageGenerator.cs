@@ -68,8 +68,8 @@ namespace gtest2html.Page
 		/// <returns>HTML data as string data.</returns>
 		protected virtual string Suites2Content(TestSuites suites)
 		{
-			var template = new TestSuites2HtmlConverter();
-			string content = template.Convert(suites);
+			var converter = new TestSuites2HtmlConverter();
+			string content = converter.Convert(suites);
 			return content;
 		}
 
@@ -78,7 +78,7 @@ namespace gtest2html.Page
 		/// </summary>
 		/// <param name="fileInfo">Output file information </param>
 		/// <param name="content">HTML content in string data type.</param>
-		protected void SendReport(FileInfo fileInfo, string content)
+		protected virtual void SendReport(FileInfo fileInfo, string content)
 		{
 			FileInfo destInfo = GetOutputFileInfo(fileInfo);
 
