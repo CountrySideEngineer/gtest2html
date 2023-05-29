@@ -24,11 +24,19 @@ namespace gtest2html
 			string outputDirPath = args[0];
 			string xmlDirPath = args[1];
 
-			var outputDirInfo = CreateOutputDirInfo(outputDirPath);
-			var xmlFileInfos = GetXmlFilePaths(xmlDirPath);
-			var xmlFileList = GetXmlFilePaths(xmlDirPath);
-			var toHtml = new XmlToHtml(outputDirInfo, xmlFileList);
-			toHtml.Convert();
+			try
+			{
+				DirectoryInfo outputDirInfo = CreateOutputDirInfo(outputDirPath);
+				IEnumerable<FileInfo> xmlFileInfos = GetXmlFilePaths(xmlDirPath);
+				IEnumerable<FileInfo> xmlFiles = GetXmlFilePaths(xmlDirPath);
+				var toHtml = new XmlToHtml(outputDirInfo, xmlFiles);
+				toHtml.Convert();
+			}
+			catch (Exception ex)
+			when (ex is ArgumentException)
+			{
+				Console.WriteLine(ex.Message);
+			}
 
 			return;
 		}
@@ -39,6 +47,7 @@ namespace gtest2html
 		/// </summary>
 		/// <param name="dirPath">Path to directory contains result of test in XML format.</param>
 		/// <returns>List of test result XML file information.</returns>
+		/// <exception cref="ArgumentException"></exception>
 		private static IEnumerable<FileInfo> GetXmlFilePaths(string dirPath)
 		{
 			if (File.Exists(dirPath))
@@ -51,10 +60,21 @@ namespace gtest2html
 			}
 			else
 			{
-				var dirInfo = new DirectoryInfo(dirPath);
-				var fileInfos = dirInfo.GetFiles("*.xml").ToList();
+				try
+				{
+					var dirInfo = new DirectoryInfo(dirPath);
+					var fileInfos = dirInfo.GetFiles("*.xml").ToList();
 
-				return fileInfos;
+					return fileInfos;
+				}
+				catch (System.Security.SecurityException)
+				{
+					throw new ArgumentException("The directory can not accss.");
+				}
+				catch (ArgumentNullException)
+				{
+					throw new ArgumentException("No xml file found in the directory");
+				}
 			}
 		}
 
@@ -63,20 +83,30 @@ namespace gtest2html
 		/// </summary>
 		/// <param name="dirPath">Path to output html result.</param>
 		/// <returns>Directory information of output directory.</returns>
+		/// <exception cref="ArgumentException"></exception>
 		private static DirectoryInfo CreateOutputDirInfo(string dirPath)
 		{
 			//If the path specified by argument dirPath mean file, it is invalid.
 			if (File.Exists(dirPath)) {
 				throw new ArgumentException("The path has already existed.");
 			}
-
-			if (!Directory.Exists(dirPath))
+			try
 			{
-				Directory.CreateDirectory(dirPath);
-			}
+				if (!Directory.Exists(dirPath))
+				{
+					Directory.CreateDirectory(dirPath);
+				}
 
-			var dirInfo = new DirectoryInfo(dirPath);
-			return dirInfo;
+				var dirInfo = new DirectoryInfo(dirPath);
+				return dirInfo;
+			}
+			catch (Exception ex)
+			when ((ex is PathTooLongException) ||
+				(ex is IOException) ||
+				(ex is UnauthorizedAccessException))
+			{
+				throw new ArgumentException("The output directory path is invalid.");
+			}
 		}
 	}
 }
