@@ -33,6 +33,10 @@ namespace gtest2html.Page
 			}
 		}
 
+		/// <summary>
+		/// Generate error report page HTML file.
+		/// </summary>
+		/// <param name="fileInfo">Test report file information.</param>
 		protected virtual void Generate(FileInfo fileInfo)
 		{
 			TestSuites suites = base.ExtractTestSuites(fileInfo);
@@ -46,6 +50,12 @@ namespace gtest2html.Page
 			}
 		}
 
+		/// <summary>
+		/// Generate error report page HTML file.
+		/// </summary>
+		/// <param name="fileInfo">Test report file information.</param>
+		/// <param name="testSuite">Test suite information.</param>
+		/// <param name="testCase">Failed test case data.</param>
 		protected virtual void Generate(FileInfo fileInfo, TestSuite testSuite, TestCase testCase)
 		{
 			FileInfo parent = GetParentPageFileInfo(fileInfo);
@@ -53,6 +63,12 @@ namespace gtest2html.Page
 			SendReport(content, testSuite, testCase);
 		}
 
+		/// <summary>
+		/// Convert TestCase object into html content.
+		/// </summary>
+		/// <param name="testCase">TestCase</param>
+		/// <param name="parentPage">Parent page file information.</param>
+		/// <returns>Error information page content.</returns>
 		protected string TestCase2Content(TestCase testCase, FileInfo parentPage)
 		{
 			var failure = new Failure()
@@ -67,6 +83,12 @@ namespace gtest2html.Page
 			return content;
 		}
 
+		/// <summary>
+		/// Returns output file information.
+		/// </summary>
+		/// <param name="suite">TestSuite object of failed test case.</param>
+		/// <param name="testCase">TestCase object of failed test.</param>
+		/// <returns>FileInfo object of error page.</returns>
 		protected FileInfo GetOutputFileInfo(TestSuite suite, TestCase testCase)
 		{
 			string outputFileName = $@"{suite.Name}_{testCase.Name}.html";
@@ -76,6 +98,11 @@ namespace gtest2html.Page
 			return outputFileInfo;
 		}
 
+		/// <summary>
+		/// Returns parent page of error report page.
+		/// </summary>
+		/// <param name="parentFileInfo">Parent file information.</param>
+		/// <returns>Error page file information.</returns>
 		protected FileInfo GetParentPageFileInfo(FileInfo parentFileInfo)
 		{
 			string fileName = Path.GetFileNameWithoutExtension(parentFileInfo.FullName);
