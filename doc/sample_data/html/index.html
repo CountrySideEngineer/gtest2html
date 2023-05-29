@@ -1,49 +1,60 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1" />
-		<title>テストレポート - 一覧</title>
+		<title>Test report - overview and content</title>
 		<link rel="stylesheet" type="text/css" href="report.css" />
 	</head>
 	<body>
 		<div>
-			<h1>テスト結果 - 一覧</h1>
+			<h1>Test report</h1>
 		</div>
 		<div>
 			<table>
+				<caption>Overview</caption>
 				<tbody>
 					<tr>
-						<td>名前</td>
-						<td>実行合計</td>
-						<td>OK</td>
-						<td>NG</td>
+						<th>Tests</th>
+						<th>Failures</th>
+						<th>Disables</th>
+						<th>Errors</th>
+						<th>Time</th>
 					</tr>
 					<tr>
-						<td><a href="UTestSample_001.html">UTestSample_001</a></td>
-						<td>2</td>
-						<td>1</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td><a href="UTestSample_001.html">UTestSample_001</a></td>
-						<td>2</td>
-						<td>1</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td><a href="UTestSample_001.html">UTestSample_001</a></td>
-						<td>2</td>
-						<td>1</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td><a href="UTestSample_001.html">UTestSample_001</a></td>
-						<td>2</td>
-						<td>1</td>
-						<td>1</td>
+						<td class="tests">4</td>
+						<td class="failures">3</td>
+						<td class="disables">0</td>
+						<td class="errors">0</td>
+						<td class="time">0.005</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-	</body></html>
+		<div>
+			<table>
+				<caption>Content</caption>
+				<tbody>
+					<tr>
+						<th>テスト名</th>
+						<th>Tests</th>
+						<th>Failure</th>
+						<th>Disables</th>
+						<th>Errors</th>
+						<th>Time</th>
+						<th>Timestamp
+					</tr>
+										<tr>
+						<td class="name"><a href="UTestSample_001.html">UTestSample_001</td>
+						<td class="tests">4</td>
+						<td class="failures">3</td>
+						<td class="disables">0</td>
+						<td class="errors">0</td>
+						<td class="time">0.005</td>
+						<td class="timestamp">02/17/2021 22:54:30</td>
+					</tr>
+									</tbody>
+			</table>
+		</div>
+	</body>
+</html>
