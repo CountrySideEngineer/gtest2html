@@ -21,6 +21,10 @@ namespace gtest2html.Page
 		/// <param name="outputRoot">Output root directory information.</param>
 		public IndexPageGenerator(DirectoryInfo outputRoot) : base(outputRoot) { }
 
+		/// <summary>
+		/// Generate index page html file.
+		/// </summary>
+		/// <param name="fileInfos">Test resport XML file information.</param>
 		public override void Generate(IEnumerable<FileInfo> fileInfos)
 		{
 			IEnumerable<TestSuites> testSuitesCollection = GetSuitesList(fileInfos);
@@ -28,6 +32,11 @@ namespace gtest2html.Page
 			SendReport(content);
 		}
 
+		/// <summary>
+		/// Returns collection of TestSuites object converted from input fileInfos.
+		/// </summary>
+		/// <param name="fileInfos">Collection of FileInfo object about test report XML file.</param>
+		/// <returns>Colelction of TestSuites object converted from inputs.</returns>
 		protected IEnumerable<TestSuites> GetSuitesList(IEnumerable<FileInfo> fileInfos)
 		{
 			var suitesList = new List<TestSuites>();
@@ -39,6 +48,10 @@ namespace gtest2html.Page
 			return suitesList;
 		}
 
+		/// <summary>
+		/// Get output file information as FileInfo object.
+		/// </summary>
+		/// <returns>FileInfo object about output index.html file.</returns>
 		protected virtual FileInfo GetOutputFileInfo()
 		{
 			string outputFileName = $@"{OutputRoot}\index.html";
@@ -47,6 +60,11 @@ namespace gtest2html.Page
 			return outputFileInfo;
 		}
 
+		/// <summary>
+		/// Convert collection of TestSuites into index page content as string.
+		/// </summary>
+		/// <param name="suites">Collection of TestSuites object.</param>
+		/// <returns>Index page content in string data type.</returns>
 		protected virtual string Suites2Content(IEnumerable<TestSuites> suites)
 		{
 			var converter = new TestSuties2IndexHtmlConverter();
@@ -54,6 +72,10 @@ namespace gtest2html.Page
 			return content;
 		}
 
+		/// <summary>
+		/// Send content into page.
+		/// </summary>
+		/// <param name="content">Index page content.</param>
 		protected virtual void SendReport(string content)
 		{
 			FileInfo destFileInfo = GetOutputFileInfo();
