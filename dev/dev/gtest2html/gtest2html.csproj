@@ -48,6 +48,7 @@
     <Compile Include="Converter\TestSuites2HtmlConverter.cs" />
     <Compile Include="Converter\TestSuties2IndexHtmlConverter.cs" />
     <Compile Include="Page\AReportPageFileGenerator.cs" />
+    <Compile Include="Page\ErrorReportPageGenerator.cs" />
     <Compile Include="Page\IndexPageGenerator.cs" />
     <Compile Include="Page\IReportPageGenerator.cs" />
     <Compile Include="Page\TestReportPageGenerator.cs" />
