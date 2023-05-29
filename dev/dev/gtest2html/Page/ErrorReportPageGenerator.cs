@@ -113,6 +113,12 @@ namespace gtest2html.Page
 			return fileInfo;
 		}
 
+		/// <summary>
+		/// Send content into 
+		/// </summary>
+		/// <param name="content"></param>
+		/// <param name="testSuite"></param>
+		/// <param name="testCase"></param>
 		protected virtual void SendReport(string content, TestSuite testSuite, TestCase testCase)
 		{
 			FileInfo fileInfo = GetOutputFileInfo(testSuite, testCase);
