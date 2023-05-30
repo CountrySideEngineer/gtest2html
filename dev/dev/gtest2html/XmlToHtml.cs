@@ -21,9 +21,23 @@ namespace gtest2html
 		/// List of test resutl xml files.
 		/// </summary>
 		public IEnumerable<FileInfo> XmlFileInfos;
+
+		IEnumerable<AReportPageFileGenerator> _generatorCollection;
 		#endregion
 
 		#region Constructor and destructor(Finalizer)
+		/// <summary>
+		/// Constructor with argument about output root directory.
+		/// </summary>
+		/// <param name="outputDir">Output directory information.</param>
+		public XmlToHtml(DirectoryInfo outputDir)
+		{
+			OutputDirInfo = outputDir;
+			XmlFileInfos = null;
+
+			SetupPageFileGenerator();
+		}
+
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -33,6 +47,8 @@ namespace gtest2html
 		{
 			OutputDirInfo = outputDir;
 			XmlFileInfos = xmlFileInfos;
+
+			SetupPageFileGenerator();
 		}
 		#endregion
 
@@ -42,15 +58,43 @@ namespace gtest2html
 		/// </summary>
 		public void Convert()
 		{
-			var pageGenerator = new TestReportPageGenerator(OutputDirInfo);
-			pageGenerator.Generate(XmlFileInfos);
-
-			var indexGenerator = new IndexPageGenerator(OutputDirInfo);
-			indexGenerator.Generate(XmlFileInfos);
-
-			var errorReportGenerator = new ErrorReportPageGenerator(OutputDirInfo);
-			errorReportGenerator.Generate(XmlFileInfos);
+			Convert(XmlFileInfos);
 		}
 		#endregion
+
+		/// <summary>
+		/// Run convert xml file into HTML file.
+		/// </summary>
+		/// <param name="xmlFileInfos">Collection of XML file information to be converted.</param>
+		public void Convert(IEnumerable<FileInfo> xmlFileInfos)
+		{
+			foreach (var generator in _generatorCollection)
+			{
+				Convert(xmlFileInfos, generator);
+			}
+		}
+
+		/// <summary>
+		/// Run convert xml file into HTML file.
+		/// </summary>
+		/// <param name="xmlFileInfos">Collection of XML file information to be converted.</param>
+		/// <param name="generator">HTML page generator.</param>
+		protected void Convert(IEnumerable<FileInfo> xmlFileInfos, AReportPageFileGenerator generator)
+		{
+			generator.Generate(xmlFileInfos);
+		}
+
+		/// <summary>
+		/// Setup page generator object.
+		/// </summary>
+		protected void SetupPageFileGenerator()
+		{
+			var generatorCollection = new List<AReportPageFileGenerator>();
+			generatorCollection.Add(new TestReportPageGenerator(OutputDirInfo));
+			generatorCollection.Add(new IndexPageGenerator(OutputDirInfo));
+			generatorCollection.Add(new ErrorReportPageGenerator(OutputDirInfo));
+
+			_generatorCollection = generatorCollection;
+		}
 	}
 }
