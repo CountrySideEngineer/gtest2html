@@ -28,14 +28,27 @@ namespace gtest2html.Converter
 		/// </summary>
 		/// <param name="src">Test suite XML file information.</param>
 		/// <returns>Converted TestSuite object.</returns>
+		/// <exception cref="ArgumentException"></exception>
 		public TestSuites Convert(FileInfo src)
 		{
-			using (var reader = new StreamReader(src.FullName, Encoding.GetEncoding("UTF-8")))
+			try
 			{
-				TestSuites suites = Deserialize(reader);
 				string testName = Path.GetFileNameWithoutExtension(src.FullName);
-				suites.TestName = testName;
-				return suites;
+				using (var reader = new StreamReader(src.FullName, Encoding.GetEncoding("UTF-8")))
+				{
+					TestSuites suites = Deserialize(reader);
+					suites.TestName = testName;
+					return suites;
+				}
+			}
+			catch (ArgumentException)
+			{
+				string message = "Input XML file can not convert.";
+				throw new ArgumentException(message);
+			}
+			catch (InvalidOperationException ex)
+			{
+				throw new ArgumentException(ex.Message);
 			}
 		}
 
@@ -44,10 +57,20 @@ namespace gtest2html.Converter
 		/// </summary>
 		/// <param name="reader"></param>
 		/// <returns></returns>
+		/// <exception cref="InvalidOperationException"></exception>
 		protected virtual TestSuites Deserialize(StreamReader reader)
 		{
-			TestSuites suite = (TestSuites)_serializer.Deserialize(reader);
-			return suite;
+			try
+			{
+				TestSuites suite = (TestSuites)_serializer.Deserialize(reader);
+				return suite;
+			}
+			catch (InvalidOperationException)
+			{
+				string message = "Input XML file format is invalid.";
+				throw new InvalidOperationException(message);
+
+			}
 		}
 	}
 }
