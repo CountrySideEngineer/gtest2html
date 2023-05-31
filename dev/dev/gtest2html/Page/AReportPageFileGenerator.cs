@@ -38,21 +38,57 @@ namespace gtest2html.Page
 			_reportConverter = new Xml2TestSuitesConverter();
 		}
 
+		/// <summary>
+		/// Extract suites from report files.
+		/// </summary>
+		/// <param name="reportInfos">Collection of FileInfo object of XML repotr file.</param>
+		/// <returns>Collection of TestSuites object.</returns>
+		/// <exception cref="Exception"></exception>
 		public virtual IEnumerable<TestSuites> ExtractTestSuites(IEnumerable<FileInfo> reportInfos)
 		{
 			List<TestSuites> testSuitesList = new List<TestSuites>();
-			foreach (var reportFile in reportInfos)
+			try
 			{
-				TestSuites suites = ExtractTestSuites(reportFile);
-				testSuitesList.Add(suites);
+				foreach (var reportFile in reportInfos)
+				{
+					TestSuites suites = ExtractTestSuites(reportFile);
+					testSuitesList.Add(suites);
+				}
+				return testSuitesList;
 			}
-			return testSuitesList;
+			catch (Exception)
+			{
+				throw;
+			}
 		}
 
+		/// <summary>
+		/// Extract test suites data from report file in XML format.
+		/// </summary>
+		/// <param name="reportInfo">FileInfo object of report file in XML format.</param>
+		/// <returns>TestSuites object.</returns>
+		/// <exception cref="Exception"></exception>
 		public virtual TestSuites ExtractTestSuites(FileInfo reportInfo)
 		{
-			TestSuites suites = _reportConverter.Convert(reportInfo);
-			return suites;
+			try
+			{
+				TestSuites suites = _reportConverter.Convert(reportInfo);
+				return suites;
+			}
+			catch (NullReferenceException)
+			{
+				string message = "Converter has not been set."
+					+ Environment.NewLine
+					+ "Check the application or restart PC.";
+				throw new Exception(message);
+			}
+			catch (Exception)
+			{
+				string message = "An error detected whlie generating report."
+					+ Environment.NewLine
+					+ "Check your test suite report file.";
+				throw new Exception(message);
+			}
 		}
 
 		/// <summary>

@@ -82,9 +82,23 @@ namespace gtest2html.Page
 		{
 			FileInfo destInfo = GetOutputFileInfo(fileInfo);
 
-			using (var writer = new StreamWriter(destInfo.FullName, false, Encoding.UTF8))
+			try
 			{
-				writer.Write(content);
+				using (var writer = new StreamWriter(destInfo.FullName, false, Encoding.UTF8))
+				{
+					writer.Write(content);
+				}
+			}
+			catch (Exception ex)
+			when (
+				(ex is UnauthorizedAccessException) ||
+				(ex is ArgumentException) ||
+				(ex is ArgumentNullException) ||
+				(ex is DirectoryNotFoundException) ||
+				(ex is IOException) ||
+				(ex is PathTooLongException))
+			{
+				throw new ArgumentException("Test report path is invalid.");
 			}
 		}
 	}
