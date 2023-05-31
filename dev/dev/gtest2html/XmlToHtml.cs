@@ -68,9 +68,16 @@ namespace gtest2html
 		/// <param name="xmlFileInfos">Collection of XML file information to be converted.</param>
 		public void Convert(IEnumerable<FileInfo> xmlFileInfos)
 		{
-			foreach (var generator in _generatorCollection)
+			try
 			{
-				Convert(xmlFileInfos, generator);
+				foreach (var generator in _generatorCollection)
+				{
+					Convert(xmlFileInfos, generator);
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.Write(ex.Message);
 			}
 		}
 
