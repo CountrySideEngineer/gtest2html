@@ -84,11 +84,11 @@ namespace gtest2html
 		/// <summary>
 		/// Run convert xml file into HTML file.
 		/// </summary>
-		/// <param name="xmlFileInfos">Collection of XML file information to be converted.</param>
+		/// <param name="fileInfos">Collection of XML file information to be converted.</param>
 		/// <param name="generator">HTML page generator.</param>
-		protected void Convert(IEnumerable<FileInfo> xmlFileInfos, AReportPageFileGenerator generator)
+		protected void Convert(IEnumerable<FileInfo> fileInfos, AReportPageFileGenerator generator)
 		{
-			generator.Generate(xmlFileInfos);
+			generator.Generate(fileInfos);
 		}
 
 		/// <summary>
