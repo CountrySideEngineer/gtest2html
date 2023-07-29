@@ -27,7 +27,6 @@ namespace gtest2html
 			try
 			{
 				DirectoryInfo outputDirInfo = CreateOutputDirInfo(outputDirPath);
-				IEnumerable<FileInfo> xmlFileInfos = GetXmlFilePaths(xmlDirPath);
 				IEnumerable<FileInfo> xmlFiles = GetXmlFilePaths(xmlDirPath);
 				var toHtml = new XmlToHtml(outputDirInfo, xmlFiles);
 				toHtml.Convert();
@@ -63,7 +62,7 @@ namespace gtest2html
 				try
 				{
 					var dirInfo = new DirectoryInfo(dirPath);
-					var fileInfos = dirInfo.GetFiles("*.xml").ToList();
+					var fileInfos = dirInfo.GetFiles("*.xml", SearchOption.AllDirectories).ToList();
 
 					return fileInfos;
 				}
