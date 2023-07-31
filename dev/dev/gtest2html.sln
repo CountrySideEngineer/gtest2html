@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gtest2html", "gtest2html\gtest2html.csproj", "{7A0994D7-A5BC-4EAA-BA40-F14A3427CD4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libgtest2html", "libgtest2html\libgtest2html.csproj", "{26CCBBBA-8D42-4BAE-B6AB-C788DD36CE85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7A0994D7-A5BC-4EAA-BA40-F14A3427CD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A0994D7-A5BC-4EAA-BA40-F14A3427CD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A0994D7-A5BC-4EAA-BA40-F14A3427CD4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26CCBBBA-8D42-4BAE-B6AB-C788DD36CE85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26CCBBBA-8D42-4BAE-B6AB-C788DD36CE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26CCBBBA-8D42-4BAE-B6AB-C788DD36CE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26CCBBBA-8D42-4BAE-B6AB-C788DD36CE85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
