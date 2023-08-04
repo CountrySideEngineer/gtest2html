@@ -49,6 +49,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HtmlTemplateCommonBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Page\Html\Template\TestMessageHtmlTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestMessageHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Html\Template\TestMessageHtmlTemplate_Code.cs" />
     <Compile Include="Page\Html\Template\TestSuitesIndexHtmlTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,6 +74,10 @@
     <Content Include="Page\Html\Template\HtmlTemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>HtmlTemplateCommonBase.cs</LastGenOutput>
+    </Content>
+    <Content Include="Page\Html\Template\TestMessageHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestMessageHtmlTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Page\Html\Template\TestSuitesIndexHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
