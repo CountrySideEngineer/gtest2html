@@ -32,7 +32,7 @@ namespace gtest2html
 		public string Name { get; set; }
 
 		[XmlElement("testsuite")]
-		public List<TestSuite> TestItems { get; set; }
+		public List<TestSuite> TestSuitesItems { get; set; }
 
 		public string TestName { get; set; }
 
