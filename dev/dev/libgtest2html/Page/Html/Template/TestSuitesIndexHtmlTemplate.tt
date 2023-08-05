@@ -31,7 +31,6 @@
 						<th>Errors</th>
 						<th>Time</th>
 					</tr>
-
 					<# foreach (var testSuite in _testSuites.TestSuitesItems) { #>
 
 					<tr>
@@ -42,14 +41,12 @@
 						<td class="errors"><#= testSuite.Errors #></td>
 						<td class="timestamp"><#= testSuite.Time #></td>
 					</tr>
-
 					<# } #>
 
 				</tbody>
 			</table>
 		</div>
 		<div>
-
 			<# foreach (var testSuite in _testSuites.TestSuitesItems) { #>
 
 			<div id="<#= testSuite.Name #>">
@@ -65,14 +62,12 @@
 						<th>Timestamp</th>
 						<th>Time</th>
 					</tr>
-
 					<# foreach (var testCase in testSuite.TestCases) { #>
 					
 					<tr>
 						<td class="name"><#= testCase.Name #></td>
 						<td class="status"><#= testCase.Status #></td>
 						<td class="result"><#= testCase.Result #></td>
-
 						<# if (("OK").Equals(testCase.Result)) { #>
 
 						<td class="passed"><#= testCase.Judge #></td>
@@ -80,18 +75,15 @@
 						<# } else { #>
 
 						<td class="not_passed"><a href="<#= testSuite.Name #>_<#= testCase.Name #>.html"><#= testCase.Judge #></a></td>
-
 						<# } #>
 
 						<td class="time"><#= testCase.Timestamp #></td>
 						<td class="timestamp"><#= testCase.Time #></td>
 					</tr>
-
 					<# } #>
 
 				</table>
 			</div>
-
 			<# } #>
 
 		</div>
