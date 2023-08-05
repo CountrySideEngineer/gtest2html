@@ -44,8 +44,8 @@
   <ItemGroup>
     <Compile Include="Converter\File\TestXml2Html.cs" />
     <Compile Include="IXml2Html.cs" />
-    <Compile Include="Page\Html\Generator\APageFileGenerator.cs" />
     <Compile Include="Page\Html\Generator\APageGenerator.cs" />
+    <Compile Include="Page\Html\Generator\TopIndexFileGenerator.cs" />
     <Compile Include="Page\Html\Generator\TopIndexPageGenerator.cs" />
     <Compile Include="Page\Html\Template\HtmlTemplateCommonBase.cs">
       <AutoGen>True</AutoGen>
