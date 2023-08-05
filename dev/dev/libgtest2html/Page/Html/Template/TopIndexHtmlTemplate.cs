@@ -112,7 +112,7 @@ namespace gtest2html.Page.Html.Template
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td class=\"name\"><a href=\"");
+            this.Write("\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td class=\"name\"><a href=\"");
             
             #line 57 "E:\development\gtest2html\dev\dev\libgtest2html\Page\Html\Template\TopIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_testSuites.HtmlFileName));
@@ -168,14 +168,14 @@ namespace gtest2html.Page.Html.Template
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t\r\n\t\t\t\t\t");
+            this.Write("</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t");
             
-            #line 66 "E:\development\gtest2html\dev\dev\libgtest2html\Page\Html\Template\TopIndexHtmlTemplate.tt"
+            #line 65 "E:\development\gtest2html\dev\dev\libgtest2html\Page\Html\Template\TopIndexHtmlTemplate.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t</tbody>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t</body>\r\n</html>\r\n");
+            this.Write("\r\n\t\t\t\t</tbody>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t</body>\r\n</html>\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

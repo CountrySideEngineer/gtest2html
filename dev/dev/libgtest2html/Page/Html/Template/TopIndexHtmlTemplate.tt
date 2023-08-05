@@ -52,7 +52,7 @@
 						<th>Timestamp
 					</tr>
 					<# foreach (var _testSuites in _testSuitesCollection) { #>
-					
+
 					<tr>
 						<td class="name"><a href="<#= _testSuites.HtmlFileName #>"><#= _testSuites.TestName #></td>
 						<td class="tests"><#= _testSuites.Tests  #></td>
@@ -62,8 +62,8 @@
 						<td class="time"><#= _testSuites.Time #></td>
 						<td class="timestamp"><#= _testSuites.TimeStamp #></td>
 					</tr>
-					
 					<# } #>
+
 				</tbody>
 			</table>
 		</div>
