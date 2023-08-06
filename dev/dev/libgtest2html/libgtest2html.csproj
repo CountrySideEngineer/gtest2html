@@ -45,6 +45,7 @@
     <Compile Include="Converter\File\TestXml2Html.cs" />
     <Compile Include="IXml2Html.cs" />
     <Compile Include="Page\Html\Generator\APageGenerator.cs" />
+    <Compile Include="Page\Html\Generator\TestMessagePageGenerator.cs" />
     <Compile Include="Page\Html\Generator\TestSuitesIndexFileGenerator.cs" />
     <Compile Include="Page\Html\Generator\TestSuitesIndexPageGenerator.cs" />
     <Compile Include="Page\Html\Generator\TopIndexFileGenerator.cs" />
