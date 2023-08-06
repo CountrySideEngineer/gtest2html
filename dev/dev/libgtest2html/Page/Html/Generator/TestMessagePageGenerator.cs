@@ -75,10 +75,10 @@ namespace gtest2html.Page.Html.Generator
 		}
 
 		/// <summary>
-		/// 
+		/// Generate test filure message.
 		/// </summary>
-		/// <param name="src"></param>
-		/// <returns></returns>
+		/// <param name="src">Failure message.</param>
+		/// <returns>Failure message.</returns>
 		protected virtual string Generate(Failure src)
 		{
 			var template = new TestMessageHtmlTemplate(src);
