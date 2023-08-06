@@ -29,7 +29,7 @@ namespace gtest2html.Page.Html.Generator
 		/// <summary>
 		/// Constructor with argument.
 		/// </summary>
-		/// <param name="outputDir">Outpu root directory information.</param>
+		/// <param name="outputDir">Output root directory information.</param>
 		public TestSuitesIndexFileGenerator(DirectoryInfo outputDir) : base()
 		{
 			OutputRootDir = outputDir;
