@@ -52,7 +52,7 @@ namespace gtest2html.Page.Html.Generator
 				}
 				content += newContent;
 			}
-			return string.Empty;
+			return content;
 		}
 
 		/// <summary>
