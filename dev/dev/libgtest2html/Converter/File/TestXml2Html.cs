@@ -9,7 +9,7 @@ using gtest2html;
 
 namespace gtest2html.Converter.File
 {
-	internal class TestXml2Html : IXml2Html<FileInfo>
+	internal abstract class TestXml2Html : IXml2Html<FileInfo>
 	{
 		public DirectoryInfo OutputDir { get; protected set; }
 
@@ -40,17 +40,8 @@ namespace gtest2html.Converter.File
 			OutputDir = new DirectoryInfo(outputDir);
 		}
 
-		public void Convert(IEnumerable<FileInfo> sources)
-		{
-			foreach	(var source in sources)
-			{
-				Convert(source);
-			}
-		}
+		public abstract void Convert(IEnumerable<FileInfo> sources);
 
-		public void Convert(FileInfo source)
-		{
-			throw new NotImplementedException();
-		}
+		public abstract void Convert(FileInfo source);
 	}
 }
