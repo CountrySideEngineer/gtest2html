@@ -66,7 +66,6 @@ namespace gtest2html.Page.Html.Generator
 			return content;
 		}
 
-
 		protected virtual DirectoryInfo GetOutputDirectoryInfo(TestSuites src)
 		{
 			string xmlFileName = System.IO.Path.GetFileNameWithoutExtension(src.XmlFilePath);
