@@ -54,7 +54,7 @@
 					<# foreach (var _testSuites in _testSuitesCollection) { #>
 
 					<tr>
-						<td class="name"><a href="<#= _testSuites.HtmlFileName #>"><#= _testSuites.TestName #></td>
+						<td class="name"><a href="<#= _testSuites.TestName #>/index.html"><#= _testSuites.TestName #></td>
 						<td class="tests"><#= _testSuites.Tests  #></td>
 						<td class="failures"><#= _testSuites.Failures #></td>
 						<td class="disables"><#= _testSuites.Disabled #></td>

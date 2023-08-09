@@ -115,11 +115,11 @@ namespace gtest2html.Page.Html.Template
             this.Write("\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td class=\"name\"><a href=\"");
             
             #line 57 "E:\development\gtest2html\dev\dev\libgtest2html\Page\Html\Template\TopIndexHtmlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_testSuites.HtmlFileName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(_testSuites.TestName));
             
             #line default
             #line hidden
-            this.Write("\">");
+            this.Write("/index.html\">");
             
             #line 57 "E:\development\gtest2html\dev\dev\libgtest2html\Page\Html\Template\TopIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_testSuites.TestName));
