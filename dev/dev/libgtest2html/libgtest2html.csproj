@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter\File\TestXml2Html.cs" />
+    <Compile Include="Converter\Suites\ATestSuites2Html.cs" />
+    <Compile Include="Converter\Suites\TestSuites2IndexHtml.cs" />
+    <Compile Include="Converter\Suites\TestSuites2TestIndexHtml.cs" />
+    <Compile Include="Converter\Suites\TestSuites2TestMessageHtml.cs" />
     <Compile Include="IXml2Html.cs" />
     <Compile Include="Page\Html\Generator\APageGenerator.cs" />
     <Compile Include="Page\Html\Generator\TestMessageFileGenerator.cs" />
@@ -99,5 +103,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
