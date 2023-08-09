@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gtest2html.Converter.File;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace gtest2html
 			if (args.Count() < 2)
 			{
 				Console.WriteLine("2 arguments are needed.");
-				Console.WriteLine("1st : Path to output.");
+				Console.WriteLine("1st : Path to directory to output result HTML.");
 				Console.WriteLine("2nd : Path to directory contains the test result xml files.");
 
 				return;
@@ -28,8 +29,8 @@ namespace gtest2html
 			{
 				DirectoryInfo outputDirInfo = CreateOutputDirInfo(outputDirPath);
 				IEnumerable<FileInfo> xmlFiles = GetXmlFilePaths(xmlDirPath);
-				var toHtml = new XmlToHtml(outputDirInfo, xmlFiles);
-				toHtml.Convert();
+				var xml2Html = new TestXml2Html(outputDirInfo);
+				xml2Html.Convert(xmlFiles);
 			}
 			catch (Exception ex)
 			when (ex is ArgumentException)
