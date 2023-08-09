@@ -42,11 +42,9 @@ namespace gtest2html.Page.Html.Generator
 		/// <returns>Content of top page of the test.</returns>
 		public override string Generate(TestSuites src)
 		{
-			var template = new TestSuitesIndexHtmlTemplate(src);
-			string content = template.TransformText();
+			string content = base.Generate(src);
 
 			DirectoryInfo outputDir = GetOutputDirectoryInfo(src);
-
 			Generate(outputDir, content);
 
 			return content;
@@ -80,8 +78,7 @@ namespace gtest2html.Page.Html.Generator
 		/// <returns>DirectoryInfo object the HTML page will be generated.</returns>
 		protected virtual DirectoryInfo GetOutputDirectoryInfo(TestSuites src)
 		{
-			string xmlFileName = System.IO.Path.GetFileNameWithoutExtension(src.XmlFilePath);
-			string outputDirPath = $@"{OutputRootDir.FullName}\{src.TestName}\{xmlFileName}\";
+			string outputDirPath = $@"{OutputRootDir.FullName}\{src.TestName}\";
 			DirectoryInfo outputDir = new DirectoryInfo(outputDirPath);
 
 			return outputDir;
