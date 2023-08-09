@@ -15,8 +15,16 @@ namespace gtest2html.Converter.Suites
 		/// </summary>
 		public TestSuites2TestMessageHtml() : base() { }
 
+		/// <summary>
+		/// Constructor with argument.
+		/// </summary>
+		/// <param name="dirInfo">Output directory information.</param>
 		public TestSuites2TestMessageHtml(DirectoryInfo dirInfo) : base(dirInfo) { }
 
+		/// <summary>
+		/// Convert TestSuites info file.
+		/// </summary>
+		/// <param name="testSuites">TestSuites object to be converted.</param>
 		public override void Convert(TestSuites testSuites)
 		{
 			var generator = new TestMessageFileGenerator(OutputDir);
