@@ -16,6 +16,8 @@ namespace gtest2html.Page.Html.Generator
 
 		protected string _testSuiteName;
 		protected string _testCaseName;
+		protected TestSuites _testSuites;
+
 
 		/// <summary>
 		/// Default constructor.
@@ -34,18 +36,16 @@ namespace gtest2html.Page.Html.Generator
 			OutputRootDir = outputDir;
 		}
 
-		protected override string Generate(Failure src)
+		public override string Generate(TestSuites src)
 		{
-			string content = base.Generate(src);
-
-
-			return content;
+			_testSuites = src;
+			return base.Generate(src);
 		}
 
 		protected override string Generate(TestSuite src)
 		{
 			_testSuiteName = src.Name;
-			string content = Generate(src);
+			string content = base.Generate(src);
 			return content;
 		}
 
@@ -56,10 +56,21 @@ namespace gtest2html.Page.Html.Generator
 			return content;
 		}
 
+		protected override string Generate(Failure src)
+		{
+			string content = base.Generate(src);
+			DirectoryInfo outputDir = GetOutputDirectoryInfo(_testSuites);
+
+			Generate(outputDir, content);
+
+			return content;
+		}
+
+
 		protected virtual DirectoryInfo GetOutputDirectoryInfo(TestSuites src)
 		{
 			string xmlFileName = System.IO.Path.GetFileNameWithoutExtension(src.XmlFilePath);
-			string outputDirPath = $@"{OutputRootDir.FullName}\{xmlFileName}";
+			string outputDirPath = $@"{OutputRootDir.FullName}\{src.TestName}\";
 			DirectoryInfo outputDirInfo = new DirectoryInfo(outputDirPath);
 
 			return outputDirInfo;
