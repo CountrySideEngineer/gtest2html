@@ -46,13 +46,21 @@ namespace gtest2html.Converter.File
 		{
 			OutputDir = new DirectoryInfo(outputDir);
 		}
-
+		
+		/// <summary>
+		/// Convert XML files about test result into HTML files.
+		/// </summary>
+		/// <param name="sources">Collection of test result XML file to be converted.</param>
 		public void Convert(IEnumerable<FileInfo> sources)
 		{
 			IEnumerable<TestSuites> suitesCollection = XmlToTestSuites(sources);
 			Convert(suitesCollection);
 		}
 
+		/// <summary>
+		/// Convert XML file about test result into HTML file.
+		/// </summary>
+		/// <param name="source">Test result XML file to be converted.</param>
 		public void Convert(FileInfo source)
 		{
 			TestSuites suites = XmlToTestSuites(source);
@@ -63,6 +71,10 @@ namespace gtest2html.Converter.File
 			Convert(suitesCollection);
 		}
 
+		/// <summary>
+		/// Convert collection of TestSuites object into HTML files.
+		/// </summary>
+		/// <param name="suitesCollection">Collection of TestSuites object to be converted into HTML.</param>
 		public void Convert(IEnumerable<TestSuites> suitesCollection)
 		{
 			var converters = new List<ATestSuites2Html>()
@@ -77,11 +89,21 @@ namespace gtest2html.Converter.File
 			}
 		}
 
+		/// <summary>
+		/// Convert TestSuites object into HTML file using converter.
+		/// </summary>
+		/// <param name="suitesCollection">Collection of TestSuites objects to be converted into HTML file.</param>
+		/// <param name="converter">A converter derived from ATestSuites2HTML to use to convert TestSuites object.</param>
 		internal void Convert(IEnumerable<TestSuites> suitesCollection, ATestSuites2Html converter)
 		{
 			converter.Convert(suitesCollection);
 		}
 
+		/// <summary>
+		/// Convert XML file into collection of TestSuites object.
+		/// </summary>
+		/// <param name="xmlFiles">Collection of test result XML file to be converted.</param>
+		/// <returns></returns>
 		protected IEnumerable<TestSuites> XmlToTestSuites(IEnumerable<FileInfo> xmlFiles)
 		{
 			List<TestSuites> suitesCollection = new List<TestSuites>();
@@ -93,6 +115,11 @@ namespace gtest2html.Converter.File
 			return suitesCollection;
 		}
 
+		/// <summary>
+		/// Convert XML file into TestSuites object.
+		/// </summary>
+		/// <param name="xmlFile">XML file information to be converted.</param>
+		/// <returns>Converted TestSuites object.</returns>
 		protected TestSuites XmlToTestSuites(FileInfo xmlFile)
 		{
 			try
@@ -115,6 +142,11 @@ namespace gtest2html.Converter.File
 			}
 		}
 
+		/// <summary>
+		/// Get TestSuites object from reader.
+		/// </summary>
+		/// <param name="reader">Reader to read from stream from XML file.</param>
+		/// <returns>TestSuites object read from stream.</returns>
 		protected TestSuites GetTestSuites(StreamReader reader)
 		{
 			try
