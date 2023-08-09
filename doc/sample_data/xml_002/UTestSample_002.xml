@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="filename.xsl"?> 
+<testsuites tests="2" failures="0" disabled="0" errors="0" time="0.005" timestamp="2021-02-17T22:54:30" name="AllTests">
+  <testsuite name="CAdd_test2" tests="2" failures="0" disabled="0" errors="0" time="0.003" timestamp="2021-02-17T22:54:30">
+    <testcase name="calc_001" status="run" result="completed" time="0" timestamp="2021-02-17T22:54:30" classname="CAdd_test" />
+    <testcase name="calc_002" status="run" result="completed" time="0.002" timestamp="2021-02-17T22:54:30" classname="CAdd_test"/>
+  </testsuite>
+</testsuites>
