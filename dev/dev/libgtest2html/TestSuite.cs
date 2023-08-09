@@ -37,13 +37,6 @@ namespace gtest2html
 		public string TestName { get; set; }
 
 		public string XmlFilePath { get; set; }
-
-		public string HtmlFileName { 
-			get
-			{
-				return this.TestName + ".html";
-			}
-		}
 	}
 
 	[XmlRoot("testsuite")]
