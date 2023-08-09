@@ -62,7 +62,7 @@ namespace gtest2html.Page.Html.Generator
 			//Create outptu directory if the directory does not exist.
 			if (!System.IO.Directory.Exists(outputDir.FullName))
 			{
-				OutputRootDir.Create();
+				outputDir.Create();
 			}
 
 			//Setup output file path.
@@ -81,7 +81,7 @@ namespace gtest2html.Page.Html.Generator
 		protected virtual DirectoryInfo GetOutputDirectoryInfo(TestSuites src)
 		{
 			string xmlFileName = System.IO.Path.GetFileNameWithoutExtension(src.XmlFilePath);
-			string outputDirPath = $@"{OutputRootDir.FullName}\{xmlFileName}\";
+			string outputDirPath = $@"{OutputRootDir.FullName}\{src.TestName}\{xmlFileName}\";
 			DirectoryInfo outputDir = new DirectoryInfo(outputDirPath);
 
 			return outputDir;

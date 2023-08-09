@@ -54,7 +54,7 @@ namespace gtest2html.Page.Html.Generator
 		/// <param name="content">Content of index.html</param>
 		protected virtual void Generate(string content)
 		{
-			string filePath = $@"{OutputDir.FullName}\{FileName}";
+			string filePath = $@"{OutputDir.FullName}\{FileNameWithExtention}";
 			using (var stream = new StreamWriter(filePath, false, Encoding.UTF8))
 			{
 				stream.Write(content);
