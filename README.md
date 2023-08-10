@@ -18,5 +18,11 @@ To run the application, type the following on the command line.
 gtest2html path/to/output path/to/input
 ``
 
-The `path/to/input` should be folder contains xml files.
+The `path/to/input` should be folder contains xml files.  
+To see the pages the application generated, open `index.html` under `path/to/output` directory.
+
+### Attention
+
+The outputs the application generate do not contain CSS file. So, the HTML pages are plain text.  
+To change it, add a CSS file named `report.css` in the same directory as index.html. 
 
