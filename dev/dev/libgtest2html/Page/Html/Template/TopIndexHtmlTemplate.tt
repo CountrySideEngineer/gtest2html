@@ -1,0 +1,71 @@
+﻿<#@ template language="C#"
+	inherits="HtmlTemplateCommonBase"
+#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1" />
+		<title>Test report - overview and content</title>
+		<link rel="stylesheet" type="text/css" href="report.css" />
+	</head>
+	<body>
+		<div>
+			<h1>Test report</h1>
+		</div>
+		<div>
+			<table>
+				<caption>Summary</caption>
+				<tbody>
+					<tr>
+						<th>Tests</th>
+						<th>Failures</th>
+						<th>Disables</th>
+						<th>Errors</th>
+						<th>Time</th>
+					</tr>
+					<tr>
+						<td class="tests"><#= TestNum #></td>
+						<td class="failures"><#= FailureNum #></td>
+						<td class="disables"><#= DisableNum #></td>
+						<td class="errors"><#= ErrorNum #></td>
+						<td class="time"><#= TimeNum #></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div>
+			<table>
+				<caption>Test suites</caption>
+				<tbody>
+					<tr>
+						<th>Name</th>
+						<th>Tests</th>
+						<th>Failure</th>
+						<th>Disables</th>
+						<th>Errors</th>
+						<th>Time</th>
+						<th>Timestamp
+					</tr>
+					<# foreach (var _testSuites in _testSuitesCollection) { #>
+
+					<tr>
+						<td class="name"><a href="<#= _testSuites.TestName #>/index.html"><#= _testSuites.TestName #></td>
+						<td class="tests"><#= _testSuites.Tests  #></td>
+						<td class="failures"><#= _testSuites.Failures #></td>
+						<td class="disables"><#= _testSuites.Disabled #></td>
+						<td class="errors"><#= _testSuites.Errors #></td>
+						<td class="time"><#= _testSuites.Time #></td>
+						<td class="timestamp"><#= _testSuites.TimeStamp #></td>
+					</tr>
+					<# } #>
+
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
