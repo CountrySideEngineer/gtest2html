@@ -34,7 +34,7 @@
 					<# foreach (var testSuite in _testSuites.TestSuitesItems) { #>
 
 					<tr>
-						<td class="name"><a href=#"<#= testSuite.Name #>"><#= testSuite.Name #></a></td>
+						<td class="name"><a href="#<#= testSuite.Name #>"><#= testSuite.Name #></a></td>
 						<td class="test"><#= testSuite.Tests#></td>
 						<td class="failures"><#= testSuite.Failures #></td>
 						<td class="disables"><#= testSuite.Disabled #></td>
@@ -68,7 +68,7 @@
 						<td class="name"><#= testCase.Name #></td>
 						<td class="status"><#= testCase.Status #></td>
 						<td class="result"><#= testCase.Result #></td>
-						<# if (("OK").Equals(testCase.Result)) { #>
+						<# if (("OK").Equals(testCase.Judge)) { #>
 
 						<td class="passed"><#= testCase.Judge #></td>
 

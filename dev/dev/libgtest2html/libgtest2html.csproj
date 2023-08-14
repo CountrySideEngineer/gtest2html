@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>gtest2html</RootNamespace>
     <AssemblyName>libgtest2html</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,12 +26,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Logger, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Logger.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter\File\TestXml2Html.cs" />
+    <Compile Include="Converter\File\TestXmlConverter.cs" />
+    <Compile Include="Converter\IXmlConverter.cs" />
     <Compile Include="Converter\Suites\ATestSuites2Html.cs" />
     <Compile Include="Converter\Suites\TestSuites2IndexHtml.cs" />
     <Compile Include="Converter\Suites\TestSuites2TestIndexHtml.cs" />
     <Compile Include="Converter\Suites\TestSuites2TestMessageHtml.cs" />
     <Compile Include="IXml2Html.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Page\Html\Generator\APageGenerator.cs" />
     <Compile Include="Page\Html\Generator\TestMessageFileGenerator.cs" />
     <Compile Include="Page\Html\Generator\TestMessagePageGenerator.cs" />

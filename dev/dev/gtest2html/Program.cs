@@ -1,4 +1,6 @@
-﻿using gtest2html.Converter.File;
+﻿using CSEngineer.Logger;
+using CSEngineer.Logger.Interface;
+using gtest2html.Converter.File;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,15 +11,19 @@ using System.Xml.Serialization;
 
 namespace gtest2html
 {
+	using Logger = CSEngineer.Logger.Log;
+
 	class Program
 	{
 		static void Main(string[] args)
 		{
+			SetupLogger();
+
 			if (args.Count() < 2)
 			{
-				Console.WriteLine("2 arguments are needed.");
-				Console.WriteLine("1st : Path to directory to output result HTML.");
-				Console.WriteLine("2nd : Path to directory contains the test result xml files.");
+				Log.ERROR("2 arguments are needed.");
+				Log.ERROR("1st : Path to directory to output result HTML.");
+				Log.ERROR("2nd : Path to directory contains the test result xml files.");
 
 				return;
 			}
@@ -35,7 +41,7 @@ namespace gtest2html
 			catch (Exception ex)
 			when (ex is ArgumentException)
 			{
-				Console.WriteLine(ex.Message);
+				Log.ERROR(ex.Message);
 			}
 
 			return;
@@ -107,6 +113,18 @@ namespace gtest2html
 			{
 				throw new ArgumentException("The output directory path is invalid.");
 			}
+		}
+
+		private static void SetupLogger()
+		{
+			var logger = Logger.GetInstance();
+			ILogEvent consoleLog = new CSEngineer.Logger.Console.Log();
+			logger.TraceLogEventHandler += consoleLog.TRACE;
+			logger.DebugLogEventHandler += consoleLog.DEBUG;
+			logger.InfoLogEventHandler += consoleLog.INFO;
+			logger.WarnLogEventHandler += consoleLog.WARN;
+			logger.ErrorLogEventHandler += consoleLog.ERROR;
+			logger.FatalLogEventHandler += consoleLog.FATAL;
 		}
 	}
 }

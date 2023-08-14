@@ -67,7 +67,7 @@ namespace gtest2html.Page.Html.Template
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td class=\"name\"><a href=#\"");
+            this.Write("\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td class=\"name\"><a href=\"#");
             
             #line 37 "E:\development\gtest2html\dev\dev\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Name));
@@ -177,7 +177,7 @@ namespace gtest2html.Page.Html.Template
             this.Write("</td>\r\n\t\t\t\t\t\t");
             
             #line 71 "E:\development\gtest2html\dev\dev\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
- if (("OK").Equals(testCase.Result)) { 
+ if (("OK").Equals(testCase.Judge)) { 
             
             #line default
             #line hidden
