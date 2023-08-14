@@ -15,10 +15,7 @@ namespace gtest2html.Converter.File
 	{
 		public DirectoryInfo OutputDir { get; protected set; }
 
-		/// <summary>
-		/// Serializer to convert XML to TestSuites object.
-		/// </summary>
-		XmlSerializer _serializer = new XmlSerializer(typeof(TestSuites));
+		TestXmlConverter _converter = new TestXmlConverter();
 
 		/// <summary>
 		/// Default constructor.
@@ -63,12 +60,12 @@ namespace gtest2html.Converter.File
 		/// <param name="source">Test result XML file to be converted.</param>
 		public void Convert(FileInfo source)
 		{
-			TestSuites suites = XmlToTestSuites(source);
-			var suitesCollection = new List<TestSuites>
+			List<FileInfo> files = new List<FileInfo>()
 			{
-				suites
+				source
 			};
-			Convert(suitesCollection);
+			IEnumerable<TestSuites> suties = XmlToTestSuites(files);
+			Convert(suties);
 		}
 
 		/// <summary>
@@ -106,59 +103,8 @@ namespace gtest2html.Converter.File
 		/// <returns></returns>
 		protected IEnumerable<TestSuites> XmlToTestSuites(IEnumerable<FileInfo> xmlFiles)
 		{
-			List<TestSuites> suitesCollection = new List<TestSuites>();
-			foreach (var xmlFile in xmlFiles)
-			{
-				TestSuites suites = XmlToTestSuites(xmlFile);
-				suitesCollection.Add(suites);
-			}
+			IEnumerable<TestSuites> suitesCollection = _converter.Convert(xmlFiles);
 			return suitesCollection;
-		}
-
-		/// <summary>
-		/// Convert XML file into TestSuites object.
-		/// </summary>
-		/// <param name="xmlFile">XML file information to be converted.</param>
-		/// <returns>Converted TestSuites object.</returns>
-		protected TestSuites XmlToTestSuites(FileInfo xmlFile)
-		{
-			try
-			{
-				using (var stream = new StreamReader(xmlFile.FullName, Encoding.UTF8))
-				{
-					TestSuites suites = GetTestSuites(stream);
-					suites.TestName = System.IO.Path.GetFileNameWithoutExtension(xmlFile.FullName);
-					return suites;
-				}
-			}
-			catch (ArgumentException)
-			{
-				string message = "Input XML file can not convert";
-				throw new ArgumentException(message);
-			}
-			catch (InvalidCastException)
-			{
-				throw;
-			}
-		}
-
-		/// <summary>
-		/// Get TestSuites object from reader.
-		/// </summary>
-		/// <param name="reader">Reader to read from stream from XML file.</param>
-		/// <returns>TestSuites object read from stream.</returns>
-		protected TestSuites GetTestSuites(StreamReader reader)
-		{
-			try
-			{
-				TestSuites suites = (TestSuites)_serializer.Deserialize(reader);
-				return suites;
-			}
-			catch (InvalidCastException)
-			{
-				string message = "Input xml XML file format is invalid.";
-				throw new InvalidCastException(message);
-			}
 		}
 	}
 }
