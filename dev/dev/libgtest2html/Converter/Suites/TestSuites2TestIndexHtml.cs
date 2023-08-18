@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace gtest2html.Converter.Suites
 {
+	using Logger = gtest2html.Log;
+
 	internal class TestSuites2TestIndexHtml : ATestSuites2Html
 	{
 		/// <summary>
@@ -27,6 +29,8 @@ namespace gtest2html.Converter.Suites
 		/// <param name="testSuites">TestSuites object to be converted.</param>
 		public override void Convert(TestSuites testSuites)
 		{
+			Logger.INFO($"Start generating index HTML file of {testSuites.TestName}.");
+
 			var generator = new TestSuitesIndexFileGenerator(OutputDir);
 			generator.Generate(testSuites);
 		}
