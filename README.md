@@ -2,7 +2,7 @@
 
 [![LICENSE](https://img.shields.io/badge/License-MIT-brightfreen.svg)](https://spdx.org/licenses/MIT)
 ![APP_VER](https://img.shields.io/badge/gtest2html-v1.1.1-%230067C5)
-![LIB_VER](https://img.shields.io/badge/libgtest2html-v0.1.1-%230067C5)
+![LIB_VER](https://img.shields.io/badge/libgtest2html-v0.1.2-%230067C5)
 ![DOT_NET_FRAMEWORK](https://img.shields.io/badge/Framework-4.7-a?style=flat&logo=.NET)
 
 **gtest2html** is an application to convert .xml format data a test application using googletest framework and run it with "_--xml:_" option.
