@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CS.Logger" Version="2.3.1" />
+    <PackageReference Include="System.CodeDom" Version="10.0.5" />
+  </ItemGroup>
+
 </Project>

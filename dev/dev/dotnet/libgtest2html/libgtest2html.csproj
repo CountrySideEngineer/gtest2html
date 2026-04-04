@@ -4,6 +4,59 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>gtest2html</RootNamespace>
+    <BaseOutputPath>..\..\bin</BaseOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CS.Logger" Version="2.3.1" />
+    <PackageReference Include="System.CodeDom" Version="10.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Page\Html\Template\HtmlTemplateCommonBase.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>HtmlTemplateCommonBase.cs</LastGenOutput>
+    </None>
+    <None Update="Page\Html\Template\TestMessageHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestMessageHtmlTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Page\Html\Template\TestSuitesIndexHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestSuitesIndexHtmlTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Page\Html\Template\TopIndexHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TopIndexHtmlTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Page\Html\Template\HtmlTemplateCommonBase.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HtmlTemplateCommonBase.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Page\Html\Template\TestMessageHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestMessageHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Page\Html\Template\TestSuitesIndexHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestSuitesIndexHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Page\Html\Template\TopIndexHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TopIndexHtmlTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
 
 </Project>
