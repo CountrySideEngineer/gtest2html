@@ -12,4 +12,8 @@
     <PackageReference Include="System.CodeDom" Version="10.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\libgtest2html\libgtest2html.csproj" />
+  </ItemGroup>
+
 </Project>
