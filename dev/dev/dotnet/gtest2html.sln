@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36908.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libgtest2html", "libgtest2html\libgtest2html.csproj", "{657F480E-4338-4D1B-B05A-2C9381C2F53F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gtest2html", "gtest2html\gtest2html.csproj", "{91806DFE-D52E-4001-BE67-AA7CB13D306D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{657F480E-4338-4D1B-B05A-2C9381C2F53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657F480E-4338-4D1B-B05A-2C9381C2F53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657F480E-4338-4D1B-B05A-2C9381C2F53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657F480E-4338-4D1B-B05A-2C9381C2F53F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91806DFE-D52E-4001-BE67-AA7CB13D306D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91806DFE-D52E-4001-BE67-AA7CB13D306D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91806DFE-D52E-4001-BE67-AA7CB13D306D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91806DFE-D52E-4001-BE67-AA7CB13D306D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50E47F41-6E1A-4589-AEE1-C651092D0307}
+	EndGlobalSection
+EndGlobal
