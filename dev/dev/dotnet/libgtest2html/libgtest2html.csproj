@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>gtest2html</RootNamespace>
     <BaseOutputPath>..\..\bin</BaseOutputPath>
+    <Version>0.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
