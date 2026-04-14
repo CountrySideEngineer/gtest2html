@@ -39,7 +39,7 @@
 						<td class="failures"><#= testSuite.Failures #></td>
 						<td class="disables"><#= testSuite.Disabled #></td>
 						<td class="errors"><#= testSuite.Errors #></td>
-						<td class="timestamp"><#= testSuite.Time.ToString("yyyy/MM/dd HH:mm:ss") #></td>
+						<td class="timestamp"><#= testSuite.Time #></td>
 					</tr>
 					<# } #>
 
@@ -78,7 +78,7 @@
 						<# } #>
 
 						<td class="time"><#= testCase.Timestamp.ToString("yyyy/MM/dd HH:mm:ss") #></td>
-						<td class="timestamp"><#= testCase.Time.ToString("yyyy/MM/dd HH:mm:ss") #></td>
+						<td class="timestamp"><#= testCase.Time #></td>
 					</tr>
 					<# } #>
 
