@@ -8,7 +8,7 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1" />
 		<title>Test report<#= _testSuites.Name #></title>
-		<link rel="stylesheet" type="text/css" href="report.css" />
+		<link rel="stylesheet" type="text/css" href="../report.css" />
 	</head>
 	<body>
 		<div id="page_top">

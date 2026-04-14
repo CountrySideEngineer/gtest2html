@@ -37,7 +37,7 @@ namespace gtest2html.Page.Html.Template
             #line default
             #line hidden
             this.Write(@"</title>
-		<link rel=""stylesheet"" type=""text/css"" href=""report.css"" />
+		<link rel=""stylesheet"" type=""text/css"" href=""../report.css"" />
 	</head>
 	<body>
 		<div id=""page_top"">

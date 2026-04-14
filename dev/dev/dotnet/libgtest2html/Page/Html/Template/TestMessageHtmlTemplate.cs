@@ -33,7 +33,7 @@ namespace gtest2html.Page.Html.Template
 		<meta charset=""utf-8""/>
 		<meta http-equiv=""X-UA-Compatible"" content=""IE=EDGE,chrome=1"" />
 		<title>Error report</title>
-		<link rel=""stylesheet"" type=""text/css"" href=""report.css"" />
+		<link rel=""stylesheet"" type=""text/css"" href=""../report.css"" />
 	</head>
 	<body>
 		<div>
