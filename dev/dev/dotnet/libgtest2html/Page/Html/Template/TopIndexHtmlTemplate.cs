@@ -164,7 +164,7 @@ namespace gtest2html.Page.Html.Template
             this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"timestamp\">");
             
             #line 63 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TopIndexHtmlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_testSuites.TimeStamp));
+            this.Write(this.ToStringHelper.ToStringWithCulture(_testSuites.TimeStamp.ToString("yyyy/MM/dd HH:mm:ss")));
             
             #line default
             #line hidden

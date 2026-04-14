@@ -226,7 +226,7 @@ namespace gtest2html.Page.Html.Template
             this.Write("\r\n\t\t\t\t\t\t<td class=\"time\">");
             
             #line 80 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Timestamp));
+            this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Timestamp.ToString("yyyy/MM/dd HH:mm:ss")));
             
             #line default
             #line hidden
