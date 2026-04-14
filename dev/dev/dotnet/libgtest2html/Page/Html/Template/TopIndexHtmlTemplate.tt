@@ -60,7 +60,7 @@
 						<td class="disables"><#= _testSuites.Disabled #></td>
 						<td class="errors"><#= _testSuites.Errors #></td>
 						<td class="time"><#= _testSuites.Time #></td>
-						<td class="timestamp"><#= _testSuites.TimeStamp #></td>
+						<td class="timestamp"><#= _testSuites.TimeStamp.ToString("yyyy/MM/dd HH:mm:ss") #></td>
 					</tr>
 					<# } #>
 

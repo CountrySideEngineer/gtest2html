@@ -77,7 +77,7 @@
 						<td class="not_passed"><a href="<#= testSuite.Name #>_<#= testCase.Name #>.html"><#= testCase.Judge #></a></td>
 						<# } #>
 
-						<td class="time"><#= testCase.Timestamp #></td>
+						<td class="time"><#= testCase.Timestamp.ToString("yyyy/MM/dd HH:mm:ss") #></td>
 						<td class="timestamp"><#= testCase.Time #></td>
 					</tr>
 					<# } #>
