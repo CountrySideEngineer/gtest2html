@@ -39,7 +39,7 @@
 						<td class="failures"><#= testSuite.Failures #></td>
 						<td class="disables"><#= testSuite.Disabled #></td>
 						<td class="errors"><#= testSuite.Errors #></td>
-						<td class="timestamp"><#= testSuite.Time #></td>
+						<td class="timestamp"><#= testSuite.Time.ToString("yyyy/MM/dd HH:mm:ss") #></td>
 					</tr>
 					<# } #>
 
@@ -77,8 +77,8 @@
 						<td class="not_passed"><a href="<#= testSuite.Name #>_<#= testCase.Name #>.html"><#= testCase.Judge #></a></td>
 						<# } #>
 
-						<td class="time"><#= testCase.Timestamp #></td>
-						<td class="timestamp"><#= testCase.Time #></td>
+						<td class="time"><#= testCase.Timestamp.ToString("yyyy/MM/dd HH:mm:ss") #></td>
+						<td class="timestamp"><#= testCase.Time.ToString("yyyy/MM/dd HH:mm:ss") #></td>
 					</tr>
 					<# } #>
 
