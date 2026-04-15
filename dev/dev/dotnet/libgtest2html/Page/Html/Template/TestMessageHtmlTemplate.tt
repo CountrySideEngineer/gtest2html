@@ -10,7 +10,7 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1" />
 		<title>Error report</title>
-		<link rel="stylesheet" type="text/css" href="report.css" />
+		<link rel="stylesheet" type="text/css" href="./../report.css" />
 	</head>
 	<body>
 		<div>
@@ -20,18 +20,21 @@
 			<a href="index.html">Back</a>
 		</div>
 		<div>
-			<table>
-				<caption>Message</caption>
-				<tbody>
-					<tr>
-						<th>Error message</th>
-					</tr>
-					<tr>
-						<td><#= _failure.Message #></td>
-					</tr>
-				</tbody>
-			</table>
-			</table>
+			<div>
+				<h2>Error detail</h2>
+			</div>
+			<div>
+				<table>
+					<tbody>
+						<tr>
+							<th>Error message</th>
+						</tr>
+						<tr>
+							<td><#= _failure.Message #></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</body>
 </html>
