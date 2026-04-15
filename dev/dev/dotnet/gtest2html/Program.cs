@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CS.Logger;
 using gtest2html.Converter.File;
+using gtest2html.Page.Css.Generator;
 using Log = CS.Logger.Log;
 
 /// <summary>
@@ -99,6 +100,9 @@ try
     IEnumerable<FileInfo> xmlFiles = GetXmlFilePaths(xmlDirPath);
     var xml2Html = new TestXml2Html(outputDirInfo);
     xml2Html.Convert(xmlFiles);
+
+    var generator = new CssFileGenerator();
+    generator.Generate(outputDirInfo);
 }
 catch (Exception ex)
 when (ex is ArgumentException)
