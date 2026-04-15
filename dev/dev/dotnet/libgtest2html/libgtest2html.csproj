@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Page\Css\Template\CssTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CssTemplate.cs</LastGenOutput>
+    </None>
     <None Update="Page\Html\Template\HtmlTemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>HtmlTemplateCommonBase.cs</LastGenOutput>
@@ -39,6 +43,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Page\Css\Template\CssTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CssTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="Page\Html\Template\HtmlTemplateCommonBase.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
