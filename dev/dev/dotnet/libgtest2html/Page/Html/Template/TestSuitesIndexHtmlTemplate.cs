@@ -29,7 +29,7 @@ namespace gtest2html.Page.Html.Template
         public virtual string TransformText()
         {
             this.Write("<html>\r\n\t<head>\r\n\t\t<meta charset=\"utf-8\"/>\r\n\t\t<meta http-equiv=\"X-UA-Compatible\" " +
-                    "content=\"IE=EDGE,chrome=1\" />\r\n\t\t<title>Test report");
+                    "content=\"IE=EDGE,chrome=1\" />\r\n\t\t<title>Test report - ");
             
             #line 10 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_testSuites.Name));
@@ -37,221 +37,222 @@ namespace gtest2html.Page.Html.Template
             #line default
             #line hidden
             this.Write(@"</title>
-		<link rel=""stylesheet"" type=""text/css"" href=""report.css"" />
+		<link rel=""stylesheet"" type=""text/css"" href=""../report.css"" />
 	</head>
 	<body>
 		<div id=""page_top"">
-			<h2>Test report - detail</h2>
+			<h1>Test report - detail</h1>
 		</div>
 		<div>
 			<a href=""./../index.html"">TOP</a>
 		</div>
 		<div>
-			<h2>Test suite summary</h2>
-		</div>
-		<div>
-			<table>
-				<tbody>
-					<tr>
-						<th>Name</th>
-						<th>Tests</th>
-						<th>Failures</th>
-						<th>Disables</th>
-						<th>Errors</th>
-						<th>Time</th>
-					</tr>
-					");
+			<div>
+				<h2>Test suite summary</h2>
+			</div>
+			<div>
+				<table>
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Tests</th>
+							<th>Failures</th>
+							<th>Disables</th>
+							<th>Errors</th>
+							<th>Time</th>
+						</tr>
+						");
             
-            #line 34 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 35 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  foreach (var testSuite in _testSuites.TestSuitesItems) { 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td class=\"name\"><a href=\"#");
+            this.Write("\r\n\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t<td class=\"name\"><a href=\"#");
             
-            #line 37 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 38 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Name));
             
             #line default
             #line hidden
             this.Write("\">");
             
-            #line 37 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 38 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Name));
             
             #line default
             #line hidden
-            this.Write("</a></td>\r\n\t\t\t\t\t\t<td class=\"test\">");
+            this.Write("</a></td>\r\n\t\t\t\t\t\t\t<td class=\"test\">");
             
-            #line 38 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 39 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Tests));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"failures\">");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t<td class=\"failures\">");
             
-            #line 39 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 40 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Failures));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"disables\">");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t<td class=\"disables\">");
             
-            #line 40 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 41 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Disabled));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"errors\">");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t<td class=\"errors\">");
             
-            #line 41 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 42 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Errors));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"timestamp\">");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t<td class=\"timestamp\">");
             
-            #line 42 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 43 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Time));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t");
+            this.Write("</td>\r\n\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t");
             
-            #line 44 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 45 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t</tbody>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t\t<div>\r\n\t\t\t");
+            this.Write("\r\n\t\t\t\t\t</tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t");
             
-            #line 50 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 51 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  foreach (var testSuite in _testSuites.TestSuitesItems) { 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t<div id=\"");
+            this.Write("\r\n\t\t<div>\r\n\t\t\t<div id=\"");
             
-            #line 52 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 54 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Name));
             
             #line default
             #line hidden
             this.Write("\">\r\n\t\t\t\t<h2>");
             
-            #line 53 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 55 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Name));
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t</div>\r\n\t\t\t<div>\r\n\t\t\t\t<table>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>test name</th>\r\n\t\t\t\t\t\t<t" +
-                    "h>Status</th>\r\n\t\t\t\t\t\t<th>Result</th>\r\n\t\t\t\t\t\t<th>Judge</th>\r\n\t\t\t\t\t\t<th>Timestamp<" +
-                    "/th>\r\n\t\t\t\t\t\t<th>Time</th>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t");
+            this.Write("</h2>\r\n\t\t\t</div>\r\n\t\t\t<div>\r\n\t\t\t\t<table>\r\n\t\t\t\t\t<tbody>\r\n\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t<th>tes" +
+                    "t name</th>\r\n\t\t\t\t\t\t\t<th>Status</th>\r\n\t\t\t\t\t\t\t<th>Result</th>\r\n\t\t\t\t\t\t\t<th>Judge</t" +
+                    "h>\r\n\t\t\t\t\t\t\t<th>Timestamp</th>\r\n\t\t\t\t\t\t\t<th>Time</th>\r\n\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t");
             
-            #line 65 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 68 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  foreach (var testCase in testSuite.TestCases) { 
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td class=\"name\">");
+            this.Write("\t\t\t\t\t\r\n\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t<td class=\"name\">");
             
-            #line 68 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 71 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Name));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"status\">");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t<td class=\"status\">");
             
-            #line 69 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 72 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Status));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"result\">");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t<td class=\"result\">");
             
-            #line 70 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 73 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Result));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t");
             
-            #line 71 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 74 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  if (("OK").Equals(testCase.Judge)) { 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t\t\t<td class=\"passed\">");
+            this.Write("\r\n\t\t\t\t\t\t\t<td class=\"passed\">");
             
-            #line 73 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 76 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Judge));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\r\n\t\t\t\t\t\t");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t");
             
-            #line 75 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 77 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  } else { 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t\t\t<td class=\"not_passed\"><a href=\"");
+            this.Write("\r\n\t\t\t\t\t\t\t<td class=\"not_passed\"><a href=\"");
             
-            #line 77 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 79 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testSuite.Name));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 77 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 79 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Name));
             
             #line default
             #line hidden
             this.Write(".html\">");
             
-            #line 77 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 79 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Judge));
             
             #line default
             #line hidden
-            this.Write("</a></td>\r\n\t\t\t\t\t\t");
+            this.Write("</a></td>\r\n\t\t\t\t\t\t\t");
             
-            #line 78 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 80 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t\t\t<td class=\"time\">");
+            this.Write("\r\n\t\t\t\t\t\t\t<td class=\"time\">");
             
-            #line 80 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 82 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Timestamp.ToString("yyyy/MM/dd HH:mm:ss")));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t\t<td class=\"timestamp\">");
+            this.Write("</td>\r\n\t\t\t\t\t\t\t<td class=\"timestamp\">");
             
-            #line 81 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 83 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testCase.Time));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t");
+            this.Write("</td>\r\n\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t");
             
-            #line 83 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 85 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t\t");
+            this.Write("\r\n\t\t\t\t\t</tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t");
             
-            #line 87 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
+            #line 91 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestSuitesIndexHtmlTemplate.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t</div>\r\n\t</body>\r\n</html>\r\n");
+            this.Write("\r\n\t</body>\r\n</html>\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
