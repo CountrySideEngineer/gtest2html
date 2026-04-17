@@ -1,0 +1,138 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+body {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	background-color: #FEFEFE; /* Slightly grayish white */
+	color: rgba(0, 0, 0, 0.85);
+}
+
+h1 {
+	text-align: center;
+	color: rgba(0, 0, 0, 0.85);
+	margin-top: 24px;
+	font-size: 52px;
+	font-weight: 600;
+}
+
+h2 {
+	text-align: left; /* Align text to the left */
+	margin: 20px; /* Set margin to 24px */
+	font-size: 32px; /* Smaller than h1 */
+}
+
+a {
+    margin: 8px 24px;
+}
+
+table {
+	width: auto;
+	border-collapse: collapse;
+	margin: 8px 32px;
+	background-color: #fff;
+	border: 3px solid #FEFEFE; /* Add border to table */
+	border-radius: 0px;
+	overflow: hidden;
+	margin-left: 32px; /* Indent tables to appear nested under h2 */
+}
+
+table a {
+	color: blue; /* Style for links inside tables */
+	text-decoration: underline;
+    margin: 8px 0px;
+}
+
+th {
+	background-color: lightblue; /* Skyblue column headers */
+	color: rgba(0, 0, 0, 0.85);
+	font-weight: 600;
+	padding: 4px 8px;
+	text-align: center;
+	border: 2px solid #FEFEFE; /* Add border to table */
+    min-width: 80px;
+}
+
+td {
+	padding: 4px 32px;
+	text-align: center;
+	border: 2px solid #FEFEFE; /* Add border to table */
+    border-radius: 0px; /* Rounded corners for cells */
+}
+
+tr {
+	background-color: #f0f0f0;
+}
+
+tr:hover {
+	background-color: #FEFEFE;
+}
+
+caption {
+	font-weight: 500;
+	margin-bottom: 12px;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.name {
+    width: auto;
+	padding: 4px 48px;
+	text-align: left;
+}
+
+.status {
+	padding: 4px 48px 4px 8px;
+	text-align: left;
+}
+
+.test {
+	width: auto;
+	padding: 4px 48px;
+	text-align: left;
+}
+
+.failures {
+	width: auto;
+	padding: 4px 48px;
+	text-align: left;
+}
+
+.disables {
+	width: auto;
+	padding: 4px 48px;
+	text-align: left;
+}
+
+.errors {
+	width: auto;
+	padding: 4px 48px;
+	text-align: left;
+}
+
+.time {
+	width: auto;
+	padding: 4px 48px;
+	text-align: left;
+}
+
+.timestamp {
+	width: auto;
+	padding: 4px 48px;
+	text-align: left;
+}
+
+.passed {
+	color: limegreen; /* Text color */
+	font-weight: bold; /* Bold text */
+}
+
+.not_passed {
+	background-color: red; /* Cell background color */
+	color: white; /* Text color */
+	font-weight: bold; /* Bold text */
+}
