@@ -33,7 +33,7 @@ namespace gtest2html.Page.Html.Template
 		<meta charset=""utf-8""/>
 		<meta http-equiv=""X-UA-Compatible"" content=""IE=EDGE,chrome=1"" />
 		<title>Error report</title>
-		<link rel=""stylesheet"" type=""text/css"" href=""../report.css"" />
+		<link rel=""stylesheet"" type=""text/css"" href=""./../report.css"" />
 	</head>
 	<body>
 		<div>
@@ -43,22 +43,25 @@ namespace gtest2html.Page.Html.Template
 			<a href=""index.html"">Back</a>
 		</div>
 		<div>
-			<table>
-				<caption>Message</caption>
-				<tbody>
-					<tr>
-						<th>Error message</th>
-					</tr>
-					<tr>
-						<td>");
+			<div>
+				<h2>Error detail</h2>
+			</div>
+			<div>
+				<table>
+					<tbody>
+						<tr>
+							<th>Error message</th>
+						</tr>
+						<tr>
+							<td>");
             
-            #line 30 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestMessageHtmlTemplate.tt"
+            #line 33 "E:\development\gtest2html\dev\dev\dotnet\libgtest2html\Page\Html\Template\TestMessageHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_failure.Message));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</tbody>\r\n\t\t\t</table>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t</body>\r\n</" +
-                    "html>\r\n\r\n");
+            this.Write("</td>\r\n\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t</tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</body>\r\n<" +
+                    "/html>\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

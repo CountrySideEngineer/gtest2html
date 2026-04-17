@@ -6,11 +6,11 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "gtest2html/0.1.1": {
+      "gtest2html/0.3.0": {
         "dependencies": {
           "CS.Logger": "2.3.1",
           "System.CodeDom": "10.0.5",
-          "libgtest2html": "0.1.1"
+          "libgtest2html": "0.3.0"
         },
         "runtime": {
           "gtest2html.dll": {}
@@ -32,22 +32,22 @@
           }
         }
       },
-      "libgtest2html/0.1.1": {
+      "libgtest2html/0.3.0": {
         "dependencies": {
           "CS.Logger": "2.3.1",
           "System.CodeDom": "10.0.5"
         },
         "runtime": {
           "libgtest2html.dll": {
-            "assemblyVersion": "0.1.1.0",
-            "fileVersion": "0.1.1.0"
+            "assemblyVersion": "0.3.0.0",
+            "fileVersion": "0.3.0.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "gtest2html/0.1.1": {
+    "gtest2html/0.3.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -66,7 +66,7 @@
       "path": "system.codedom/10.0.5",
       "hashPath": "system.codedom.10.0.5.nupkg.sha512"
     },
-    "libgtest2html/0.1.1": {
+    "libgtest2html/0.3.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

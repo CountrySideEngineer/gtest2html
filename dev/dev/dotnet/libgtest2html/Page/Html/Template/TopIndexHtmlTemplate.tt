@@ -18,54 +18,62 @@
 			<h1>Test report</h1>
 		</div>
 		<div>
-			<table>
-				<caption>Summary</caption>
-				<tbody>
-					<tr>
-						<th>Tests</th>
-						<th>Failures</th>
-						<th>Disables</th>
-						<th>Errors</th>
-						<th>Time</th>
-					</tr>
-					<tr>
-						<td class="tests"><#= TestNum #></td>
-						<td class="failures"><#= FailureNum #></td>
-						<td class="disables"><#= DisableNum #></td>
-						<td class="errors"><#= ErrorNum #></td>
-						<td class="time"><#= TimeNum #></td>
-					</tr>
-				</tbody>
-			</table>
+			<div>
+				<h2>Summary</h2>
+			</div>
+			<div>
+				<table>
+					<tbody>
+						<tr>
+							<th>Tests</th>
+							<th>Failures</th>
+							<th>Disables</th>
+							<th>Errors</th>
+							<th>Time</th>
+						</tr>
+						<tr>
+							<td class="tests"><#= TestNum #></td>
+							<td class="failures"><#= FailureNum #></td>
+							<td class="disables"><#= DisableNum #></td>
+							<td class="errors"><#= ErrorNum #></td>
+							<td class="time"><#= TimeNum #></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<div>
-			<table>
-				<caption>Test suites</caption>
-				<tbody>
-					<tr>
-						<th>Name</th>
-						<th>Tests</th>
-						<th>Failure</th>
-						<th>Disables</th>
-						<th>Errors</th>
-						<th>Time</th>
-						<th>Timestamp
-					</tr>
-					<# foreach (var _testSuites in _testSuitesCollection) { #>
+			<div>
+				<h2>Test suites</h2>
+			</div>
+			<div>
+				<table>
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Tests</th>
+							<th>Failure</th>
+							<th>Disables</th>
+							<th>Errors</th>
+							<th>Time</th>
+							<th>Timestamp
+						</tr>
+						<# foreach (var _testSuites in _testSuitesCollection) { #>
 
-					<tr>
-						<td class="name"><a href="<#= _testSuites.TestName #>/index.html"><#= _testSuites.TestName #></td>
-						<td class="tests"><#= _testSuites.Tests  #></td>
-						<td class="failures"><#= _testSuites.Failures #></td>
-						<td class="disables"><#= _testSuites.Disabled #></td>
-						<td class="errors"><#= _testSuites.Errors #></td>
-						<td class="time"><#= _testSuites.Time #></td>
-						<td class="timestamp"><#= _testSuites.TimeStamp.ToString("yyyy/MM/dd HH:mm:ss") #></td>
-					</tr>
-					<# } #>
+						<tr>
+							<td class="name"><a href="<#= _testSuites.TestName #>/index.html"><#= _testSuites.TestName #></td>
+							<td class="tests"><#= _testSuites.Tests  #></td>
+							<td class="failures"><#= _testSuites.Failures #></td>
+							<td class="disables"><#= _testSuites.Disabled #></td>
+							<td class="errors"><#= _testSuites.Errors #></td>
+							<td class="time"><#= _testSuites.Time #></td>
+							<td class="timestamp"><#= _testSuites.TimeStamp.ToString("yyyy/MM/dd HH:mm:ss") #></td>
+						</tr>
+						<# } #>
 
-				</tbody>
-			</table>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</body>
 </html>
